@@ -1,13 +1,24 @@
 NAME = libftprintf.a
-LIBFT = /libft/libft.a
-FT_PRINTF = /ft_printf/ft_printf.a
-
-LIBFTPRINTF = libftprintf.a
+LIBFT = libft/libft.a
+FT_PRINTF = ft_printf/ft_printf.a
+OBJS = *.o
 
 all: $(NAME)
 
-$(NAME): $(LIBFTPRINTF)
+$(NAME):  $(LIBFT)
+	ar x $(LIBFT)
+	ar rcs $(NAME) $(OBJS)
 
-$(LIBFTPRINTF): $(LIBFT) $(FT_PRINTF)
+$(LIBFT):
+	$(make) bonus -C libft
 
-$(LIBFT) $(FT_PRINTF)
+$(FT_PRINTF):
+	$(MAKE) -C ft_printf
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
