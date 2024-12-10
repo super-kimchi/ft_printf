@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyungkim <kyungkim@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 13:30:36 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/10 19:48:33 by kyungkim         ###   ########.fr       */
+/*   Created: 2024/12/10 10:13:21 by kyungkim          #+#    #+#             */
+/*   Updated: 2024/12/10 20:00:45 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+void	ft_putchar(char	c)
+{
+	write(1, &c, 1);
+}
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int	ft_printf(const char *, ...);
+void	ft_putstr(char *str)
+{
+	if (!str)
+		return ft_putstr("(null)");
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
 
-#endif
+}

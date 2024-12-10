@@ -5,19 +5,21 @@ OBJS = *.o
 
 all: $(NAME)
 
-$(NAME):  $(LIBFT)
+$(NAME):  $(LIBFT) $(FT_PRINTF)
 	ar x $(LIBFT)
+	ar x $(FT_PRINTF)
 	ar rcs $(NAME) $(OBJS)
 	$(MAKE) fclean -C libft
+	$(MAKE) fclean -C ft_printf
 	$(MAKE) clean
-	#$(MAKE) fclean -C printf
 
 $(LIBFT):
 	@echo "make libft"
 	@$(MAKE) bonus -C libft
 
 $(FT_PRINTF):
-	$(MAKE) -C ft_printf
+	@echo "make ft_printf"
+	@$(MAKE) -C ft_printf
 
 clean:
 	rm -f $(OBJS)
