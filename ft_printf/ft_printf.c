@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:38:20 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/10 22:02:55 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:12:46 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ int	ft_printf(const char *text, ...)
 int	main(void)
 {
 	char	*test = "hello 42 kay";
-	int	counter =ft_printf("charcter :%c: :%s:\n", -159, (char *)NULL);
-	int	counter2 =printf("charcter :%c: :%s:\n", -159, (char *)NULL);
+	char	*test1 = NULL;
+	int	counter = ft_printf("charcter :%c: :%s:\n", -159, (char *)NULL);
+	int	counter2 = printf("charcter :%c: :%s:\n", -159, test1);
 	printf("%d\n", counter);
 	printf("%d\n", counter2);
 
