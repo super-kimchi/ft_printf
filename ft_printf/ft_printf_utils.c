@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:13:21 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/10 21:12:01 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/12 20:19:02 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,22 @@ void	ft_putstr(char *str, int *count)
 		str++;
 	}
 }
+
+static void	printhex(unsigned long address, int *count)
+{
+	char	*hex;
+
+	hex = "0123456789ABCDEF";
+	if (address > 16)
+		printhex(address/16, count);
+	write(1, &hex[address % 16], 1);
+	(*count)++;
+}
+
+void	ft_puthex(unsigned long address, int *count)
+{
+	write(1, "0x", 2);
+	*count += 2;
+	printhex(address, count);
+}
+
