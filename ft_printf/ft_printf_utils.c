@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:13:21 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/12 20:19:02 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/12 20:40:37 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	printhex(unsigned long address, int *count)
 {
 	char	*hex;
 
-	hex = "0123456789ABCDEF";
+	hex = "0123456789abcdef";
 	if (address > 16)
 		printhex(address/16, count);
 	write(1, &hex[address % 16], 1);
