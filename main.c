@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:34:25 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 12:54:48 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:39:36 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int	main(void)
 	ft_printf("pointer test -p\n");
 	ft_printf("ft_printf: %p\n", test);
 	printf("printf: %p\n", test);
+	ft_printf("ft_printf: %p\n", (void *)0);
+	printf("printf: %p\n", (void *)0);
+	
 	
 	ft_printf("ft_printf= -p, 15: %p \n", (void *)15);
 	ft_printf("ft_printf= -p, 16: %p \n", (void *)16);

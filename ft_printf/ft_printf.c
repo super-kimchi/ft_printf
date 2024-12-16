@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:38:20 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 12:46:44 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:50:17 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static const char	*checkcases(const char *text, va_list *args, int *count)
 int	ft_printf(const char *text, ...)
 {
 	int		c;
-	va_list args;
+	va_list	args;
 
 	c = 0;
 	va_start(args, text);
@@ -52,4 +52,3 @@ int	ft_printf(const char *text, ...)
 	}
 	return (c);
 }
-

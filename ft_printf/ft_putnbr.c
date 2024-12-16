@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:05:03 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 12:20:58 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:51:14 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_putint(int n, int *count)
 	{
 		write(1, "-2147483648", 11);
 		*count += 11;
-		return ; 
+		return ;
 	}
 	num = n;
 	ft_putnbr(num, count);
@@ -47,5 +47,3 @@ void	ft_putuint(unsigned int n, int *count)
 {
 	ft_putnbr(n, count);
 }
-
-
