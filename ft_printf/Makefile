@@ -1,5 +1,5 @@
 NAME = ft_printf.a
-SRC = ft_printf.c	ft_printf_utils.c	ft_putnbr.c
+SRC = ft_printf.c	ft_printf_utils.c	ft_putnbr.c	ft_printhex.c
 OBJ = $(SRC:.c=.o)
 
 CC = cc

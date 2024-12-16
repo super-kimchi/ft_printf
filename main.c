@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:34:25 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 12:24:30 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/16 12:54:48 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,28 @@ int	main(void)
 	printf("printf -d with octal: %d\n", 012);
 	ft_printf("ft_printf -d with octal: %d\n", 012);
 	
+	ft_printf("ft_printf -u test\n");
 	ft_printf("ft_printf -u: %u\n", 4294967295);
 	printf("printf -u: %u\n", (unsigned int)4294967295);
 	ft_printf("ft_printf -u: %u\n", -1);
 	printf("printf -u: %u\n", -1);
 	ft_printf("ft_printf -u: %u\n", (unsigned int)4294967296);
 	printf("printf -u: %u\n", (unsigned int)4294967296);
+
+	ft_printf("ft_printf -x -X test\n");
+	ft_printf("ft_printf -x: %x\n", 16);
+	printf("printf -x: %x\n", 16);
+	ft_printf("ft_printf -x: %x\n", 32);
+	printf("printf -x: %x\n", 32);
+	ft_printf("ft_printf -x: %x\n", -1);
+	printf("printf -x: %x\n", -1);
+	ft_printf("ft_printf -X: %X\n", 16);
+	printf("printf -X: %X\n", 16);
+	ft_printf("ft_printf -X: %X\n", 32);
+	printf("printf -X: %X\n", 32);
+	ft_printf("ft_printf -X: %X\n", -1);
+	printf("printf -X: %X\n", -1);
+//	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	ft_printf("my printf :%c: :%c: :%c:\n", 0xC3, 31, -1);
 //	printf("real printf :%c: :%c: :%c:\n", 256+32 , 31, -1);

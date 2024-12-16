@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:38:20 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 12:13:20 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/16 12:46:44 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ static const char	*checkcases(const char *text, va_list *args, int *count)
 	else if (*text == 's')
 		ft_putstr(va_arg(*args, char *), count);
 	else if (*text == 'p')
-		ft_puthex((unsigned long)va_arg(*args, void *), count);
-	else if(*text == 'd' || *text == 'i')
+		ft_printmemory((unsigned long)va_arg(*args, void *), count);
+	else if (*text == 'd' || *text == 'i')
 		ft_putint(va_arg(*args, int), count);
-	else if(*text == 'u')
+	else if (*text == 'u')
 		ft_putuint(va_arg(*args, unsigned int), count);
+	else if (*text == 'x' || *text == 'X')
+		ft_printhex(va_arg(*args, unsigned int), count, *text);
 	text++;
 	return (text);
 }
