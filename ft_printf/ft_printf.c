@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:38:20 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/12 20:19:32 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/16 12:13:20 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ static const char	*checkcases(const char *text, va_list *args, int *count)
 		ft_putstr(va_arg(*args, char *), count);
 	else if (*text == 'p')
 		ft_puthex((unsigned long)va_arg(*args, void *), count);
-	//else if(*text == 'p')
-
+	else if(*text == 'd' || *text == 'i')
+		ft_putint(va_arg(*args, int), count);
+	else if(*text == 'u')
+		ft_putuint(va_arg(*args, unsigned int), count);
 	text++;
 	return (text);
 }
@@ -49,20 +51,3 @@ int	ft_printf(const char *text, ...)
 	return (c);
 }
 
-int	main(void)
-{
-	char	*test = "hello 42 kay";
-//	char	*test1 = NULL;
-	int	counter = ft_printf("charcter :%c: :%s:\n", -159, test);
-	int	counter2 = printf("charcter :%c: :%s:\n", -159, test);
-	printf("%d\n", counter);
-	printf("%d\n", counter2);
-
-//	printf("%d", printf("printf :%c:\n", -159));
-//	printf("printf :%p:\n", test);
-//	printf("printf :%s:\n", (char *)NULL);
-	printf("printf :%05d:\n", 32);
-	ft_printf("%p\n", test);
-	printf("%p\n", test);
-	
-}
