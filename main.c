@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:34:25 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 19:39:36 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/16 22:45:35 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ int	main(void)
 	printf("printf -X: %X\n", 32);
 	ft_printf("ft_printf -X: %X\n", -1);
 	printf("printf -X: %X\n", -1);
+
+
+	ft_printf("ft_printf -%%test\n");
+	ft_printf("ft_printf -x: %%\n");
+	printf("printf -x: %% \n");
 //	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	ft_printf("my printf :%c: :%c: :%c:\n", 0xC3, 31, -1);
