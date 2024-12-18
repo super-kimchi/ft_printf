@@ -1,49 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 12:05:03 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 19:51:14 by kyungkim         ###   ########.fr       */
+/*   Created: 2024/12/18 10:47:47 by kyungkim          #+#    #+#             */
+/*   Updated: 2024/12/18 10:48:08 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_putnbr(long n, int *count)
+char	*ft_putpad(const char *text, int *count)
 {
-	int		output;
-
-	if (n < 0)
+	char	*nstr;
+	int		i;
+	int		number;
+	
+	i = 0;
+	while ('0' <= text[i] && text[i] <= '9')
+		i++;
+	nstr = ft_substr(text, 0, i);
+	number = ft_atoi(nstr);
+	while (number-- > 0)
 	{
-		n *= -1;
-		write(1, "-", 1);
+		write(1, "0", 1);
 		(*count)++;
 	}
-	if (n >= 10)
-		ft_putnbr(n / 10, count);
-	output = (n % 10) + '0';
-	write(1, &output, 1);
-	(*count)++;
+	//ft_printf("\ntext + i %c", *(text + i));
+	return (char *)(text + i);
 }
-
-void	ft_putint(int n, int *count)
-{
-	long	num;
-
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		*count += 11;
-		return ;
-	}
-	num = n;
-	ft_putnbr(num, count);
-}
-
-void	ft_putuint(unsigned int n, int *count)
-{
-	ft_putnbr(n, count);
-}
+	

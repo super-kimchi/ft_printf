@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:34:25 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/16 22:45:35 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:09:17 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,38 @@ int	main(void)
 	ft_printf("ft_printf -%%test\n");
 	ft_printf("ft_printf -x: %%\n");
 	printf("printf -x: %% \n");
-//	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
+
+	ft_printf("test\n");
+	printf("printf :\001\002\007\v\010\f\r:\n");
+	ft_printf("ft_printf :\001\002\007\v\010\f\r:\n");
+
+	ft_printf("\ntest\n");
+	int	test1 =  ft_printf(":%k:123\n", "hi");
+	int	test2 =  printf(":%k:123\n", "hi");
+	int	test3 =  ft_printf(":%r:123\n");
+	int	test4 =  printf(":%r:123\n");
+	int	test5 =  ft_printf(":%.:123\n");
+	int	test6 =  printf(":%.:123\n");
+	printf("ft_printf :%d: \n", test1);
+	printf("printf :%d: \n", test2);
+	printf("ft_printf :%d: \n", test3);
+	printf("printf :%d: \n", test4);
+	printf("ft_printf :%d: \n", test5);
+	printf("printf :%d: \n", test6);
+//	printf(":printf %. :abc");
+
+
+	ft_printf("\nbonuspart\n");
+	
+	printf("printf -0 tag test: %011111111214748364 %d\n", 23, 42);
+	printf("%0-33d\n", 23);
+	printf("%33d\n", 23);
+	printf("%-33d\n", 23);
+
+	int test7 = ft_printf("padding test: %033d\n", 12);
+	int	test8 = printf("padding test: %033d\n", 12);
+	ft_printf("printf: %d, ft_printf: %d\n", test7, test8);
+	//	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	ft_printf("my printf :%c: :%c: :%c:\n", 0xC3, 31, -1);
 //	printf("real printf :%c: :%c: :%c:\n", 256+32 , 31, -1);
