@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:13:21 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/18 10:54:23 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:20:54 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putstr(char *str, int *count)
 
 void	ft_putnbr(long n, int *count)
 {
-	long		output;
+	long	output;
 
 	if (n == -2147483648)
 	{
@@ -66,8 +66,7 @@ void	ft_puthex(unsigned long address, int *count, char c)
 		}
 		write(1, "0x", 2);
 		*count += 2;
-		return ft_puthex(address, count, 'x');
-
+		return (ft_puthex(address, count, 'x'));
 	}
 	if (c == 'x')
 		hex = "0123456789abcdef";

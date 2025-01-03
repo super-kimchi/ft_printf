@@ -5,7 +5,7 @@ OBJS = *.o
 
 all: $(NAME)
 
-$(NAME):  $(LIBFT) $(FT_PRINTF)
+$(NAME): $(FT_PRINTF) $(LIBFT)
 	ar x $(LIBFT)
 	ar x $(FT_PRINTF)
 	ar rcs $(NAME) $(OBJS)

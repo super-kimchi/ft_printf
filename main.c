@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:34:25 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/17 13:09:17 by kyungkim         ###   ########.fr       */
+/*   Updated: 2025/01/03 18:07:46 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,26 @@ int	main(void)
 	int test7 = ft_printf("padding test: %033d\n", 12);
 	int	test8 = printf("padding test: %033d\n", 12);
 	ft_printf("printf: %d, ft_printf: %d\n", test7, test8);
+
+	ft_printf("number: %d\n", -1231231);
+
+	printf("format right align: :%5x:\n", 42);
+	printf("format  left align: :%5-x:\n", 42);
+	printf("format  left align: :%-5x:\n", 42);
+	printf("format right  zero: :%05x:\n", 42);
+	printf("format combination: :%05-9x:\n", 42);
+	printf("format combination: :%-12#09x:\n", 42);
+	printf("format combination: :%5#09x:\n", 42);
+	printf("format combination: :%5#09:\n", 42);
+
+	printf("format test: :%05-9x:\n", 42);
+	printf("format test: :%#-05x:\n", 42);
+	printf("format test: :%#05-7x:\n", 42);
+	printf("format test: :%+ #05-7d:\n", 42);
+	printf("format test: :% #05+-7d:\n", 42);
+	printf("format test: :% #09-7d:\n", 42);
+	printf("format test: :%10#09-7d:\n", 42);
+	printf("libft test ft_strlen(): %d", ft_strlen("hi42kay"));
 	//	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	printf("Manually encoded UTF-8: :%c%c:\n", 0xC2, 0xA9);
 //	ft_printf("my printf :%c: :%c: :%c:\n", 0xC3, 31, -1);

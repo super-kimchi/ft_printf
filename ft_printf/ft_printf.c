@@ -6,14 +6,11 @@
 /*   By: kyungkim <kyungkim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:38:20 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/18 10:48:58 by kyungkim         ###   ########.fr       */
+/*   Updated: 2025/01/03 18:15:26 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "../libft/libft.h"
-#include <stddef.h>
-#include <stdio.h>
 
 static const char	*checkcases(const char *text, va_list *args, int *count)
 {
@@ -31,18 +28,11 @@ static const char	*checkcases(const char *text, va_list *args, int *count)
 		ft_puthex(va_arg(*args, unsigned int), count, *text);
 	else if (*text == '%')
 		ft_putchar('%', count);
-	else if(*text == '0')
-	{
-		return (checkcases(ft_putpad(++text, count), args, count));
-	//	text = ft_putpad(++text, count);
-	//	ft_printf("returned string :%s:",text);
-	}
 	else
 		return (text);
 	text++;
 	return (text);
 }
-
 
 int	ft_printf(const char *text, ...)
 {
@@ -73,7 +63,8 @@ static	int	checkcases(char text, va_list *args)
 	else if (text == 's')
 		return ft_putstr(va_arg(*args, char *), count);
 	else if (text == 'p')
-		return ft_putnbr_base((unsigned long)va_arg(*args, void *), "0123456789abcdef");
+		return ft_putnbr_base((unsigned long)va_arg(*args, void *),
+		"0123456789abcdef");
 	else if (text == 'd' || text == 'i')
 		return ft_putint(va_arg(*args, int), count);
 	else if (text == 'u')
@@ -107,4 +98,3 @@ int	ft_printf(const char *text, ...)
 	return (c);
 }
 */
-

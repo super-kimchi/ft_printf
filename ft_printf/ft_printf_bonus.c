@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:47:47 by kyungkim          #+#    #+#             */
-/*   Updated: 2024/12/18 10:48:08 by kyungkim         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:18:51 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_putpad(const char *text, int *count)
 	char	*nstr;
 	int		i;
 	int		number;
-	
+
 	i = 0;
 	while ('0' <= text[i] && text[i] <= '9')
 		i++;
@@ -28,7 +28,5 @@ char	*ft_putpad(const char *text, int *count)
 		write(1, "0", 1);
 		(*count)++;
 	}
-	//ft_printf("\ntext + i %c", *(text + i));
-	return (char *)(text + i);
+	return ((char *)(text + i));
 }
-	
