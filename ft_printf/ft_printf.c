@@ -6,7 +6,7 @@
 /*   By: kyungkim <kyungkim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:38:20 by kyungkim          #+#    #+#             */
-/*   Updated: 2025/01/06 16:06:08 by kyungkim         ###   ########.fr       */
+/*   Updated: 2025/01/09 19:37:48 by kyungkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ static const char	*checkcases(const char *text, va_list *args, int *count)
 	else if (*text == '%')
 		ft_putchar('%', count);
 	else
+	{
+		ft_putchar('%', count);
 		return (text);
+	}
 	text++;
 	return (text);
 }
